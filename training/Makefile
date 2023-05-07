@@ -1,6 +1,6 @@
 .PHONY: train
 train: .ve
-	.ve/bin/python train.py
+	.ve/bin/python whales.py
 
 .PHONY: compile-requirements
 compile-requirements: requirements.txt
