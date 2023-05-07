@@ -15,7 +15,8 @@ To get a GPU, click _Runtime_ -> _Change runtime type_, then change _Hardware ac
 We can verify that we've been assigned a GPU and view its specifications:
 """
 
-gpu_info = !nvidia-smi
+import os
+gpu_info = os.popen("nvidia-smi").read()
 gpu_info = '\n'.join(gpu_info)
 if gpu_info.find('failed') >= 0:
   print('Not connected to a GPU')
@@ -29,13 +30,6 @@ the `soundfile` package to pre-process audio files, `evaluate` and `jiwer` to
 assess the performance of our model. Finally, we'll
 use `gradio` to build a flashy demo of our fine-tuned model.
 """
-
-!pip install datasets>=2.6.1
-!pip install git+https://github.com/huggingface/transformers
-!pip install librosa
-!pip install evaluate>=0.30
-!pip install jiwer
-!pip install gradio
 
 """We strongly advise you to upload model checkpoints directly the [Hugging Face Hub](https://huggingface.co/) 
 whilst training. The Hub provides:
