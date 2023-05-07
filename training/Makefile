@@ -7,7 +7,7 @@ train: .ve
 compile-requirements: requirements.txt
 
 requirements.txt: .ve/bin/pip requirements.in
-	@.ve/bin/pip-compile --resolver=backtracking requirements.in
+	.ve/bin/pip-compile --resolver=backtracking requirements.in
 
 .ve: .ve/bin/pip requirements.txt
 	.ve/bin/pip install -r requirements.txt && touch .ve

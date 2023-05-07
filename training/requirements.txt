@@ -29,6 +29,8 @@ attrs==23.1.0
     #   jsonschema
 audioread==3.0.0
     # via librosa
+bitsandbytes==0.38.1
+    # via -r requirements.in
 certifi==2023.5.7
     # via
     #   httpcore
@@ -175,6 +177,16 @@ numpy==1.24.3
     #   scipy
     #   soxr
     #   transformers
+nvidia-cublas-cu11==11.10.3.66
+    # via
+    #   nvidia-cudnn-cu11
+    #   torch
+nvidia-cuda-nvrtc-cu11==11.7.99
+    # via torch
+nvidia-cuda-runtime-cu11==11.7.99
+    # via torch
+nvidia-cudnn-cu11==8.5.0.96
+    # via torch
 orjson==3.8.11
     # via gradio
 packaging==23.1
@@ -274,6 +286,8 @@ tokenizers==0.13.3
     # via transformers
 toolz==0.12.0
     # via altair
+torch==1.13.1
+    # via -r requirements.in
 tqdm==4.65.0
     # via
     #   datasets
@@ -289,6 +303,7 @@ typing-extensions==4.5.0
     #   huggingface-hub
     #   librosa
     #   pydantic
+    #   torch
 tzdata==2023.3
     # via pandas
 uc-micro-py==1.0.2
@@ -303,9 +318,16 @@ websockets==11.0.3
     # via
     #   gradio
     #   gradio-client
+wheel==0.40.0
+    # via
+    #   nvidia-cublas-cu11
+    #   nvidia-cuda-runtime-cu11
 xxhash==3.2.0
     # via
     #   datasets
     #   evaluate
 yarl==1.9.2
     # via aiohttp
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
