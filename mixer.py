@@ -1,4 +1,5 @@
 # mixes audio files together
+import os
 import ffmpeg
 
 def concatenate_audio_files(input_files, output_file):
@@ -29,12 +30,6 @@ def mix_audio_files(input_files, output_file, weights):
         .run()
     )
 
-
-import ffmpeg
-import os
-
-import ffmpeg
-import os
 
 def crossfade_audio_files(input_files, output_file, crossfade_duration=1):
     # Combine the input files into a single concatenated stream
