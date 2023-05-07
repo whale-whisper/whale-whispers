@@ -1,3 +1,4 @@
+# make targets to run training jobs
 .PHONY: train
 train: .ve
 	.ve/bin/python whales.py
@@ -17,8 +18,6 @@ requirements.txt: .ve/bin/pip requirements.in
 
 .PHONY: deps
 deps:
-	@echo "Installing dependencies..."
-	@command -v ffmpeg > /dev/null || brew install ffmpeg
 
 .PHONY: clean
 clean:
