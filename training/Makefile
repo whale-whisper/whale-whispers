@@ -20,3 +20,6 @@ deps:
 	@echo "Installing dependencies..."
 	@command -v ffmpeg > /dev/null || brew install ffmpeg
 
+.PHONY: clean
+clean:
+	rm -rf .ve
