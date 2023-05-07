@@ -9,8 +9,8 @@ run-mixer: .ve deps
 .PHONY: compile-requirements
 compile-requirements: requirements.txt
 
-requirements.txt:
-	@pip-compile requirements.in
+requirements.txt: requirements.in
+	@.ve/bin/pip-compile requirements.in
 
 .ve: requirements.txt
 	python3 -m venv .ve
