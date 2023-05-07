@@ -42,10 +42,6 @@ Linking the notebook to the Hub is straightforward - it simply requires entering
 Hub authentication token when prompted. Find your Hub authentication token [here](https://huggingface.co/settings/tokens):
 """
 
-from huggingface_hub import notebook_login
-
-notebook_login()
-
 """## Load Dataset
 
 Using 🤗 Datasets, downloading and preparing data is extremely simple. 

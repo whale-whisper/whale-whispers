@@ -99,6 +99,7 @@ httpx==0.24.0
     #   gradio-client
 huggingface-hub==0.14.1
     # via
+    #   -r requirements.in
     #   datasets
     #   evaluate
     #   gradio
