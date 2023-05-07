@@ -6,7 +6,7 @@ center_sounds_dir = 'data/center_sounds'
 # Define a mapping from letters to audio file names
 MAPPING = {}
 
-files = os.listdir(center_sounds_dir)
+files = sorted(os.listdir(center_sounds_dir))
 
 def letter_to_audio_file():
     global MAPPING
