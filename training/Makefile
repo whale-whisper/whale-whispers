@@ -1,13 +1,19 @@
+.PHONY: train
+train: .ve
+	.ve/bin/python train.py
+
 .PHONY: compile-requirements
 compile-requirements: requirements.txt
 
-requirements.txt: requirements.in
+requirements.txt: .ve/bin/pip requirements.in
 	@.ve/bin/pip-compile --resolver=backtracking requirements.in
 
-.ve: requirements.txt
+.ve: .ve/bin/pip requirements.txt
+	.ve/bin/pip install -r requirements.txt
+
+.ve/bin/pip:
 	python3 -m venv .ve
 	.ve/bin/pip install wheel pip-tools
-	.ve/bin/pip install -r requirements.txt
 
 .PHONY: deps
 deps:
