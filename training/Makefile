@@ -10,7 +10,7 @@ requirements.txt: .ve/bin/pip requirements.in
 	@.ve/bin/pip-compile --resolver=backtracking requirements.in
 
 .ve: .ve/bin/pip requirements.txt
-	.ve/bin/pip install -r requirements.txt
+	.ve/bin/pip install -r requirements.txt && touch .ve
 
 .ve/bin/pip:
 	python3 -m venv .ve

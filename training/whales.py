@@ -56,7 +56,8 @@ of `test` data as our held-out test set:
 
 from datasets import load_dataset, DatasetDict
 
-ds = load_dataset("janak2/3second-small", data_dir="3second", use_auth_token=True)
+DATASET=os.environ.get("DATASET", "janak2/3second-small")
+ds = load_dataset(DATASET, data_dir="3second", use_auth_token=True)
 print(ds)
 
 """Most ASR datasets only provide input audio samples (`audio`) and the 
