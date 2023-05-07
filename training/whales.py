@@ -58,8 +58,13 @@ from datasets import load_dataset, DatasetDict
 
 DATASET=os.environ.get("DATASET", "janak2/3second-small")
 print("loading dataset", DATASET)
-ds = load_dataset(DATASET, data_dir="3second", use_auth_token=True, drop_labels=False)
-print(ds)
+dstrain = load_dataset(DATASET, data_dir="3second", use_auth_token=True, drop_labels=False, split='train')
+dstest = load_dataset(DATASET, data_dir="3second", use_auth_token=True, drop_labels=False, split='test')
+
+common_voice = DatasetDict()
+common_voice["train"] = dstrain
+common_voice["test"] = dstest
+
 
 """Most ASR datasets only provide input audio samples (`audio`) and the 
 corresponding transcribed text (`sentence`). Common Voice contains additional 
