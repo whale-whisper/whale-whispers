@@ -23,7 +23,6 @@ def letter_to_audio_file():
 
 if __name__ == '__main__':
     # Test the mapping
-    letter_to_audio_file()
-    print(MAPPING['a'])  # Output: center_sounds/train0.aiff
-    print(MAPPING['z'])  # Output: center_sounds/train25.aiff
-    print(MAPPING[' '])  # Output: center_sounds/train26.aiff
+    m = letter_to_audio_file()
+    for i, letter in enumerate('abcdefghijklmnopqrstuvwxyz '):
+        print(i, letter, m[letter])
